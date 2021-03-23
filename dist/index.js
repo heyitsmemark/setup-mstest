@@ -1085,10 +1085,10 @@ function run() {
                 stdout: (data) => {
                     const installationPath = data.toString().trim();
                     core.debug(`Found installation path: ${installationPath}`);
-                    let toolPath = path.join(installationPath, 'Common7\\IDE\\MSTest.exe');
+                    let toolPath = path.join(installationPath, 'Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow\\vstest.console.exe');
                     core.debug(`Checking for path: ${toolPath}`);
                     if (!fs.existsSync(toolPath)) {
-                        toolPath = path.join(installationPath, 'Common7\\IDE\\MSTest.exe');
+                        toolPath = path.join(installationPath, 'Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow\\vstest.console.exe');
                         core.debug(`Checking for path: ${toolPath}`);
                         if (!fs.existsSync(toolPath)) {
                             return;
