@@ -10,7 +10,7 @@ const VS_VERSION = core.getInput('vs-version') || 'latest'
 const VSWHERE_PATH = core.getInput('vswhere-path')
 
 // if a specific version of VS is requested
-let VSWHERE_EXEC = '-products * -requires Microsoft.Component.mstest -property installationPath -latest '
+let VSWHERE_EXEC = '-products * -requires Microsoft.VisualStudio.Product.TestAgent -property installationPath -latest '
 if (VS_VERSION !== 'latest') {
   VSWHERE_EXEC += `-version "${VS_VERSION}" `
 }
